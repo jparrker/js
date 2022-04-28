@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "..\\..\\Class26\\class26-materials\\class26-materials\\objects-shots"
+		},
+		{
+			"path": "..\\jeopardy_demo"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "jeopardy_demo"
+	}
+}
