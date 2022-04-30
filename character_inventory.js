@@ -12,19 +12,36 @@ When a character slays another character, the victim's inventory goes to its van
 
 class Character {
   constructor(name, health, strength) {
-    this.property1 = param1;
-    this.property2 = param2;
+    this.name = name;
+    this.health = name;
+    this.strength = strength;
+    this.xp = 0;
     // ...
   }
-  method1(/* ... */) {
-    // ...
+  attack(target) {
+    if (this.health > 0) {
+      const damage = this.strength;
+      console.log(
+        `${this.name} attacks ${target.name} and causes ${damage} damage points`
+      );
+      target.health -= damage;
+      if (target.health > 0) {
+        console.log(`${target.name} has ${target.heath} health points left`);
+      } else {
+        target.health = 0;
+        const bonusXP = 10;
+        console.log(`
+        ${this.name} eliminated ${target.name} and wins ${bonusXP} experience points`);
+        this.xp += bonusXP;
+      }
+    } else {
+      console.log(`${this.name} can't attack because they've been eliminated`);
+    }
   }
-  method2(/* ... */) {
-    // ...
+  describe() {
+    return `${this.name} has ${this.health} health points, ${this.strength} as strength and ${this.xp} as XP points`;
   }
-  // ...
 }
 
-const myObject = new MyClass(arg1, arg2, ...);
+const myObject = new Character("Dave", 100, 50);
 myObject.method1(/* ... */);
-
