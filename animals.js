@@ -40,3 +40,20 @@ class Cow extends Animal {
     console.log(`${this.name} MOOOOOOOOOs`);
   }
 }
+
+class Cat extends Animal {
+  constructor(name, breed) {
+    super(name);
+    this._breed = breed;
+  }
+  get breed() {
+    return this._breed;
+  }
+  speak() {
+    super.speak();
+    console.log(`${this.name} meooooooooowwwwws`);
+  }
+}
+
+let simba = new Animal("Simba");
+simba.name; //using the getter
